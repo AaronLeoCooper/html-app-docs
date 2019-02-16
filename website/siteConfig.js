@@ -20,7 +20,7 @@ const siteConfig = {
   baseUrl: '/html-app-docs/',
 
   // Used for publishing and more
-  projectName: 'html-app-website',
+  projectName: 'html-app-docs',
   organizationName: 'aaronleocooper',
 
   // For no header links in the top nav bar -> headerLinks: [],
