@@ -13,10 +13,3 @@ jobs:
           git config --global user.name "AaronLeoCooper"
           echo "machine github.com login AaronLeoCooper password $GITHUB_TOKEN" > ~/.netrc
           cd website && yarn install && GIT_USER=AaronLeoCooper USE_SSH=true yarn run publish-gh-pages
-
-workflows:
-  version: 2
-  build_and_deploy:
-    jobs:
-      - deploy-website:
-#         filters: *filter-only-master
