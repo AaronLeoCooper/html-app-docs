@@ -158,7 +158,7 @@ For more information about blog posts, click [here](https://docusaurus.io/docs/e
     /* you can add docs */
     { doc: 'my-examples', label: 'Examples' },
     /* you can add custom pages */
-    { page: 'help', label: 'Help' },
+    { page: 'help', label: 'About' },
     /* you can add external links */
     { href: 'https://github.com/facebook/Docusaurus', label: 'GitHub' },
     ...
