@@ -3,13 +3,12 @@ jobs:
   build:
     docker:
       - image: circleci/node:8.11.1
-
     steps:
       - checkout
       - run:
-        name: "Deploying to GitHub Pages"
-        command: |
-          git config --global user.email "AaronLeoCooper@users.noreply.github.com"
-          git config --global user.name "AaronLeoCooper"
-          echo "machine github.com login AaronLeoCooper password $GITHUB_TOKEN" > ~/.netrc
-          cd website && yarn install && GIT_USER=AaronLeoCooper USE_SSH=true yarn run publish-gh-pages
+          name: "Deploying to GitHub Pages"
+          command: |
+            git config --global user.email "AaronLeoCooper@users.noreply.github.com"
+            git config --global user.name "AaronLeoCooper"
+            echo "machine github.com login AaronLeoCooper password $GITHUB_TOKEN" > ~/.netrc
+            cd website && yarn install && GIT_USER=AaronLeoCooper USE_SSH=true yarn run publish-gh-pages
