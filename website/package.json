@@ -1,8 +1,17 @@
 {
+  "name": "html-app-docs",
+  "version": "1.0.0",
+  "description": "Documentation website for HTMLApp",
+  "author": {
+    "name": "Aaron Leo Cooper",
+    "email": "aaronleocooper@gmail.com",
+    "url": "https://webdevdiaries.com"
+  },
   "scripts": {
     "examples": "docusaurus-examples",
     "start": "docusaurus-start",
     "build": "docusaurus-build",
+    "publish": "GIT_USER=AaronLeoCooper CURRENT_BRANCH=master USE_SSH=true yarn run publish-gh-pages",
     "publish-gh-pages": "docusaurus-publish",
     "write-translations": "docusaurus-write-translations",
     "version": "docusaurus-version",
