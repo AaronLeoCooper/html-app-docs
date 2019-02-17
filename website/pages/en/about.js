@@ -34,10 +34,17 @@ function About(props) {
       <Container className="mainContainer documentContainer postContainer">
         <div className="post">
           <header className="postHeader">
-            <h1>Need help?</h1>
+            <h1>About {siteConfig.title}</h1>
           </header>
-          <p>This project is maintained by a dedicated group of people.</p>
-          <GridBlock contents={supportLinks} layout="threeColumn" />
+          <p>
+            This project was born out of a desire to build simple websites and web apps
+            without needing to resort to a full-blown JavaScript framework, DOM rendering
+            library or build setup.
+          </p>
+          <p>
+            {siteConfig.title} was built and maintained by myself, Aaron Leo Cooper. I blog
+            about things occasionally over at <a href="https://webdevdiaries.com">webdevdiaries.com</a>.
+          </p>
         </div>
       </Container>
     </div>

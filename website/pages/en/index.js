@@ -49,8 +49,15 @@ class HomeSplash extends React.Component {
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
-            <Button href={docUrl('getting-started.html')}>Getting Started</Button>
-            <Button href={docUrl('api-overview.html')}>API Reference</Button>
+            <Button href={`${this.props.config.sourceRepoUrl}/archive/master.zip`}>
+              Download
+            </Button>
+            <Button href={docUrl('getting-started.html')}>
+              Getting Started
+            </Button>
+            <Button href={docUrl('api-overview.html')}>
+              API Reference
+            </Button>
           </PromoSection>
         </div>
       </SplashContainer>

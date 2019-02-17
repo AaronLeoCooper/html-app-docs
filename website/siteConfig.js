@@ -4,7 +4,7 @@ const siteConfig = {
   title: 'HTMLApp',
   tagline: 'Create interactive web pages with HTML and JavaScript easily!',
   url: 'https://aaronleocooper.github.io',
-  baseUrl: '/html-app-docs/',
+  baseUrl: '/',
   projectName: 'html-app-docs',
   organizationName: 'aaronleocooper',
 
