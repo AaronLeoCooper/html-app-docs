@@ -49,7 +49,7 @@ class HomeSplash extends React.Component {
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
-            <Button href={`${this.props.config.sourceRepoUrl}/archive/master.zip`}>
+            <Button href={`${this.props.siteConfig.sourceRepoUrl}/archive/master.zip`}>
               Download
             </Button>
             <Button href={docUrl('getting-started.html')}>
