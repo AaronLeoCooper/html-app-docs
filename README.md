@@ -9,6 +9,10 @@ It uses [Docusaurus](https://docusaurus.io/docs/en/site-preparation) and is host
 
 ---
 
-## Installation
+## Setup
 
-Run `yarn install` inside the `website` directory.
+1. Run `yarn install` inside the `website` directory.
+2. The site can be ran locally from the `website` directory with `yarn start`.
+3. Building the site into static assets is done via `yarn build` and produces static files inside
+   `website/build/html-app-docs`.
+4. Deployments are automatically triggered from Netlify on master branch changes.
