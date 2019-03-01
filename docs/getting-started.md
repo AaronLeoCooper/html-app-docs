@@ -4,18 +4,9 @@ title: Getting Started
 sidebar_label: Getting Started
 ---
 
-## Installation
-
-The recommended way of installing HTMLApp is via a CDN link or by downloading the JS file and
-including it in your HTML pages, along with any of your own JS includes:
-
-```html
-<body>
-  <!-- include your JS files at the end of the body: -->
-  <script src="html-app.browser.min.js"></script>
-  <script src="app.js"></script>
-</body>
-```
+After [installing the package](installation.md), the JS file can then be included in
+your HTML file just before the closing `</body>` tag. Make sure any of your own JS
+`script` tags are placed *after* the `html-app.js` import.
 
 Then add some markup somewhere above your script tags, making sure to use the special
 `data-htmlapp` tag for the root element of the application:
@@ -24,17 +15,21 @@ Then add some markup somewhere above your script tags, making sure to use the sp
 <body>
   <!-- include the data-htmlapp attribute for the root of the app: -->
   <div data-htmlapp>
-
     <!-- any important children should have the data-ha attribute: -->
     <input data-ha="userName" />
     <span data-ha="userNameError"></span>
-    
     <p>I'm not so important, so I don't need any special tags.</p>
-
   </div>
+
+  <!-- include the html-app JS file: -->
+  <script src="html-app.browser.min.js"></script>
+
+  <!-- then include any of your own JS files: -->
+  <script src="app.js"></script>
+</body>
 ```
 
-Finally, in your own JavaScript source file, create a new instance of `HTMLApp`:
+Finally, in your own JavaScript file, create a new instance of `HTMLApp`:
 
 ```js
 new HTMLApp({
