@@ -9,7 +9,7 @@ const siteConfig = {
   organizationName: 'aaronleocooper',
 
   headerLinks: [
-    { doc: 'getting-started', label: 'Docs' },
+    { doc: 'installation', label: 'Docs' },
     { doc: 'api-overview', label: 'API Reference' },
     { page: 'about', label: 'About' }
   ],
