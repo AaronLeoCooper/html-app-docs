@@ -5,7 +5,8 @@
       "getting-started"
     ],
     "API Reference": [
-      "api-overview"
+      "api-overview",
+      "api-htmlapp"
     ]
   }
 }
