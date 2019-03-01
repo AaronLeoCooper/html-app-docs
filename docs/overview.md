@@ -1,6 +1,6 @@
 ---
-id: api-overview
-title: API Reference
+id: overview
+title: Overview
 ---
 
 This section documents all exposed bits and pieces of the library's API.
