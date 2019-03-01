@@ -1,5 +1,5 @@
 ---
-id: api-reference-htmlapp
+id: api-htmlapp
 title: HTMLApp
 ---
 
