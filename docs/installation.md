@@ -4,6 +4,9 @@ title: Installation
 sidebar_label: Installation
 ---
 
+There's a couple of different means of obtaining the JavaScript package for HTMLApp.
+Which you choose will depend on your local or server setup.
+
 ## Direct download
 
 The most straightforward means of installing HTMLApp is by downloading the
