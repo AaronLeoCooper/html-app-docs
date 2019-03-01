@@ -10,7 +10,7 @@ const siteConfig = {
 
   headerLinks: [
     { doc: 'installation', label: 'Docs' },
-    { doc: 'api-reference-overview', label: 'API Reference' },
+    { doc: 'api-overview', label: 'API Reference' },
     { page: 'about', label: 'About' }
   ],
 
