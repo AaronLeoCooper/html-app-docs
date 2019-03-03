@@ -22,7 +22,7 @@ Then add some markup somewhere above your script tags, making sure to use the sp
   </div>
 
   <!-- include the html-app JS file: -->
-  <script src="html-app.browser.min.js"></script>
+  <script src="https://unpkg.com/html-app/dist/html-app.browser.min.js"></script>
 
   <!-- then include any of your own JS files: -->
   <script src="app.js"></script>

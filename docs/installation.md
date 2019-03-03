@@ -12,7 +12,7 @@ Which you choose will depend on your local or server setup.
 The most straightforward means of installing HTMLApp is by downloading the
 browser package directly from the latest release branch on GitHub:
 
-[Download latest package](https://github.com/AaronLeoCooper/html-app/archive/master.zip)
+[Download latest package](https://unpkg.com/html-app/dist/html-app.browser.min.js)
 
 ## Via a package manager
 

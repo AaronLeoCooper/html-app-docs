@@ -60,6 +60,7 @@ const siteConfig = {
   sourceRepoUrl: 'https://github.com/AaronLeoCooper/html-app',
   npmUrl: 'https://www.npmjs.com/package/html-app',
   websiteRepoUrl: 'https://github.com/AaronLeoCooper/html-app-docs',
+  cdnUrl: 'https://unpkg.com/html-app/dist/html-app.browser.min.js'
 };
 
 module.exports = siteConfig;

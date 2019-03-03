@@ -54,7 +54,7 @@ class Footer extends React.Component {
             <a href={this.props.config.npmUrl}>
               NPM
             </a>
-            <a href={`${this.props.config.sourceRepoUrl}/archive/master.zip`}>
+            <a href={this.props.config.cdnUrl}>
               Download
             </a>
           </div>
