@@ -8,7 +8,6 @@
     "url": "https://webdevdiaries.com"
   },
   "scripts": {
-    "examples": "docusaurus-examples",
     "start": "docusaurus-start",
     "build": "docusaurus-build",
     "publish": "GIT_USER=AaronLeoCooper CURRENT_BRANCH=master USE_SSH=true yarn run publish-gh-pages",

@@ -1,8 +1,12 @@
 {
   "docs": {
-    "Installation & Setup": ["getting-started"]
-  },
-  "docs-other": {
-    "API Reference": ["api-overview"]
+    "Setup & Installation": [
+      "installation",
+      "getting-started"
+    ],
+    "API Reference": [
+      "api-overview",
+      "api-htmlapp"
+    ]
   }
 }

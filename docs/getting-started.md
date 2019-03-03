@@ -4,32 +4,38 @@ title: Getting Started
 sidebar_label: Getting Started
 ---
 
-## Installation
+After [installing the package](installation.md), the JS file can then be included in
+your HTML file just before the closing `</body>` tag. Make sure any of your own JS
+`script` tags are placed *after* the `html-app.js` import.
 
-The recommended way of installing HTMLApp is via a CDN link or by downloading the JS file and
-including it in your HTML pages:
+Then add some markup somewhere above your script tags, making sure to use the special
+`data-htmlapp` tag for the root element of the application:
 
 ```html
 <body>
-  <!-- include the data-htmlapp attribute -->
+  <!-- include the data-htmlapp attribute for the root of the app: -->
   <div data-htmlapp>
+    <!-- any important children should have the data-ha attribute: -->
     <input data-ha="userName" />
     <span data-ha="userNameError"></span>
+    <p>I'm not so important, so I don't need any special tags.</p>
   </div>
-  
-  <!-- include your JS files: -->
-  <script src="html-app.browser.min.js"></script>
+
+  <!-- include the html-app JS file: -->
+  <script src="https://unpkg.com/html-app/dist/html-app.browser.min.js"></script>
+
+  <!-- then include any of your own JS files: -->
   <script src="app.js"></script>
 </body>
-``` 
+```
 
-Then in your own JavaScript source file, instantiate `HTMLApp`:
+Finally, in your own JavaScript file, create a new instance of `HTMLApp`:
 
 ```js
 new HTMLApp({
-  listeners: [
+  eventHandlers: [
     {
-      el: 'userName',
+      id: 'userName',
       onChange: function(e, el) {
         if (!e.target.value) {
           this.getEl('userNameError').setText('This field is required!');
@@ -45,3 +51,6 @@ new HTMLApp({
   ]
 });
 ```
+
+And that's all there is to it. A bit of HTML and a dash of JS and you've got a
+simple, functional web app.

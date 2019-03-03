@@ -30,12 +30,21 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
-            <a href={this.docUrl('doc1.html', this.props.language)}>
+            <a href={this.docUrl('installation.html', this.props.language)}>
+              Installation
+            </a>
+            <a href={this.docUrl('getting-started.html', this.props.language)}>
               Getting Started
             </a>
           </div>
           <div>
             <h5>API Reference</h5>
+            <a href={this.docUrl('api-overview.html', this.props.language)}>
+              Overview
+            </a>
+            <a href={this.docUrl('api-htmlapp.html', this.props.language)}>
+              HTMLApp
+            </a>
           </div>
           <div>
             <h5>More</h5>
@@ -45,7 +54,7 @@ class Footer extends React.Component {
             <a href={this.props.config.npmUrl}>
               NPM
             </a>
-            <a href={`${this.props.config.sourceRepoUrl}/archive/master.zip`}>
+            <a href={this.props.config.cdnUrl}>
               Download
             </a>
           </div>
