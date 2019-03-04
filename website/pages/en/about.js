@@ -43,7 +43,7 @@ function About(props) {
           </p>
           <p>
             {siteConfig.title} was built and maintained by myself, Aaron Leo Cooper. I blog
-            about things occasionally over at <a href="https://webdevdiaries.com">webdevdiaries.com</a>.
+            about techie things over at <a href="https://webdevdiaries.com">webdevdiaries.com</a>.
           </p>
         </div>
       </Container>
