@@ -47,7 +47,7 @@ new HTMLApp({
   eventHandlers: [
     {
       id: 'userName',
-      onChance: (e) => {}
+      onChange: (e) => {}
     }
   ]
 });
