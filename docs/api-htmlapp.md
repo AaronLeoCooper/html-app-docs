@@ -3,9 +3,7 @@ id: api-htmlapp
 title: HTMLApp
 ---
 
-## `HTMLApp`
-
-Constructor class for the core HTMLApp component.
+The constructor class for the core HTMLApp component.
 
 ### Options
 
@@ -34,6 +32,9 @@ root element.
   element
 - `document` - whether events for this handler object should be bound to the
   document
+  
+See [Event Handlers](./api-options-eventhandlers.md) for the full API specification
+of `eventHandlers`.
 
 ### Returns
 
@@ -47,7 +48,7 @@ new HTMLApp({
   eventHandlers: [
     {
       id: 'userName',
-      onChance: (e) => {}
+      onChange: (e) => {}
     }
   ]
 });

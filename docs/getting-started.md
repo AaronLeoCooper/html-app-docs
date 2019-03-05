@@ -21,10 +21,7 @@ Then add some markup somewhere above your script tags, making sure to use the sp
     <p>I'm not so important, so I don't need any special tags.</p>
   </div>
 
-  <!-- include the html-app JS file: -->
   <script src="https://unpkg.com/html-app/dist/html-app.browser.min.js"></script>
-
-  <!-- then include any of your own JS files: -->
   <script src="app.js"></script>
 </body>
 ```
@@ -36,13 +33,13 @@ new HTMLApp({
   eventHandlers: [
     {
       id: 'userName',
-      onChange: function(e, el) {
+      onChange: function(e, el, app) {
         if (!e.target.value) {
-          this.getEl('userNameError').setText('This field is required!');
+          app.getEl('userNameError').setText('This field is required!');
 
           el.setClass('has-error');
         } else {
-          this.getEl('userNameError').setText('');
+          app.getEl('userNameError').setText('');
 
           el.removeClass('has-error');
         }
