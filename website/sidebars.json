@@ -6,7 +6,8 @@
     ],
     "API Reference": [
       "api-overview",
-      "api-htmlapp"
+      "api-htmlapp",
+      "api-options-eventhandlers"
     ]
   }
 }
