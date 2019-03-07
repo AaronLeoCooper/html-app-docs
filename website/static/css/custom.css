@@ -15,7 +15,6 @@ p a {
 }
 
 p a:before {
-  /*color: #aaa1c8;*/
   content: '';
   position: absolute;
   bottom: 0;
@@ -31,6 +30,18 @@ p a:hover:before {
   opacity: 0.6;
 }
 
+.container.flex .wrapper {
+  display: flex;
+}
+
+.container.flex .wrapper .gridBlock {
+  width: 50%;
+}
+
+.example-iframe {
+  width: 50%;
+}
+
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
 }
 
@@ -38,6 +49,17 @@ p a:hover:before {
 }
 
 @media only screen and (max-width: 1023px) {
+  .container.flex .wrapper {
+    display: block;
+  }
+
+  .container.flex .wrapper .gridBlock {
+    width: 100%;
+  }
+
+  .example-iframe {
+    width: 100%;
+  }
 }
 
 @media only screen and (min-width: 1400px) {

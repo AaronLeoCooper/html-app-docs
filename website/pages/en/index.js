@@ -55,7 +55,7 @@ class HomeSplash extends React.Component {
             <Button href={docUrl('getting-started.html')}>
               Getting Started
             </Button>
-            <Button href={docUrl('api-overview.html')}>
+            <Button href={docUrl('api-htmlapp.html')}>
               API Reference
             </Button>
           </PromoSection>
@@ -68,36 +68,58 @@ class HomeSplash extends React.Component {
 class Index extends React.Component {
   render() {
     const {config: siteConfig, language = ''} = this.props;
-    const {baseUrl} = siteConfig;
-
-    const Block = props => (
-      <Container
-        padding={['bottom', 'top']}
-        id={props.id}
-        background={props.background}>
-        <GridBlock
-          align="center"
-          contents={props.children}
-          layout={props.layout}
-        />
-      </Container>
-    );
+    const {title, baseUrl} = siteConfig;
 
     return (
       <div>
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer">
-          <Block background="light">
-            {[
-              {
-                title: "It's just HTML + JavaScript",
-                content: `If you're building a simple website, you *probably* don't need a framework.
-${siteConfig.title} provides an opinionated means of binding JavaScript logic with tagged HTML elements.`,
-                image: `${baseUrl}img/logo.svg`,
-                imageAlign: 'right',
-              },
-            ]}
-          </Block>
+          <Container
+            id="example"
+            padding={['bottom', 'top']}
+            background="light"
+          >
+            <GridBlock
+              align="center"
+              layout="threeColumn"
+              contents={[
+                {
+                  title: 'Minimal API',
+                  content: 'No clutter. Just the useful bits to make your HTML interactive.',
+                },
+                {
+                  title: 'Super lightweight',
+                  content: 'Weighing in at less than 2kb minzipped, network impact is negligible.',
+                },
+                {
+                  title: 'Zero dependencies',
+                  content: `${title} is dependency-free and has full unit test coverage. It's rock solid.`,
+                }
+              ]}
+            />
+          </Container>
+          <Container
+            id="example"
+            padding={['bottom', 'top']}
+            className="flex"
+          >
+            <GridBlock
+              align="center"
+              contents={[
+                {
+                  title: "It's just HTML + JavaScript",
+                  content: `If you're building a simple website, you *probably* don't need a framework.
+${title} provides an opinionated means of binding JavaScript logic with tagged HTML elements.`,
+                }
+              ]}
+            />
+            <div
+              className="example-iframe"
+              dangerouslySetInnerHTML={{
+                __html: '<iframe src="https://codesandbox.io/embed/j48o555oxv?autoresize=1&fontsize=14&hidenavigation=1&view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>'
+              }}
+            />
+          </Container>
         </div>
       </div>
     );

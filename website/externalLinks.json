@@ -1,0 +1,18 @@
+{
+  "github": {
+    "label": "GitHub",
+    "link": "https://github.com/AaronLeoCooper/html-app"
+  },
+  "docsGithub": {
+    "label": "Docs GitHub",
+    "link": "https://github.com/AaronLeoCooper/html-app-docs"
+  },
+  "npm": {
+    "label": "NPM",
+    "link": "https://www.npmjs.com/package/html-app"
+  },
+  "download": {
+    "label": "Download",
+    "link": "https://unpkg.com/html-app/dist/html-app.browser.min.js"
+  }
+}
