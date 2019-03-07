@@ -3,25 +3,55 @@ id: api-htmlapp
 title: HTMLApp
 ---
 
-The constructor class for the core HTMLApp component.
+The core component of HTMLApp is the `HTMLApp` class.
 
-### Options
+When using the downloaded browser-compatible package, `HTMLApp` is a
+globally accessible constructor function:
 
-Options are passed as an object to the constructor.
+```js
+new HTMLApp();
+``` 
 
-#### `appName` *optional*
+When using the installed library from NPM and importing it as an ES6 module,
+it is accessed as the default import:
 
-*Type:* `string`
+```js
+import HTMLApp from 'html-app';
 
-The value used in the root element attribute. This controls which element is
-treated as the root of the application.
+new HTMLApp();
+```
 
-If this is omitted, the first found element with a `data-htmlapp` attribute
-gets used.
+## Options
 
-#### `eventHandlers` *optional*
+Options are passed as an object to the `HTMLApp` constructor.
 
-*Type:* `{ id: string, root: boolean, document: boolean }[]`
+### `appName`
+
+The value used in the root element attribute: `data-htmlapp`. This controls
+which HTML element is treated as the root of the application.
+
+```html
+<div data-htmlapp="main"></div>
+```
+
+```js
+new HTMLApp({
+  appName: 'main'
+});
+```
+
+If `appName` is omitted, the first found HTML element with a `data-htmlapp`
+attribute with *any* value gets used.
+
+Since `appName` is optional, if you know you will only ever have one instance
+of `HTMLApp` in your page, you can simply attach a blank root attribute to
+an element in your HTML:
+
+```html
+<div data-htmlapp></div>
+```
+
+### `eventHandlers`
 
 An array of objects used to bind event handlers to child elements within the
 root element.
@@ -32,24 +62,5 @@ root element.
   element
 - `document` - whether events for this handler object should be bound to the
   document
-  
-See [Event Handlers](./api-options-eventhandlers.md) for the full API specification
-of `eventHandlers`.
 
-### Returns
-
-The created app instance.
-
-### Usage
-
-```js
-new HTMLApp({
-  appName: 'specialApp',
-  eventHandlers: [
-    {
-      id: 'userName',
-      onChange: (e) => {}
-    }
-  ]
-});
-```
+See [Event Handlers](./api-options-eventhandlers.md) for the full API spec.
