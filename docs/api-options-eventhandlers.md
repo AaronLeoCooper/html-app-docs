@@ -46,7 +46,7 @@ new HTMLApp({
 Below is a comprehensive list of all available properties that an event handler
 object can have.
 
-## `on<EventName>` callbacks
+## `onEvent` callbacks
 
 *Type:* `function`
 
@@ -88,9 +88,21 @@ object, like so:
 
 *Type:* `string`
 
-The `id` is a required property when defining a normal element event handler.
+`id` is a required property when defining a normal element event handler, and is
+not required for root or document event handlers.
+
 The value of `id` must match the value of a child HTML element, defined using
 the `data-ha` attribute.
+
+```html
+<div data-htmlapp>
+  <button data-ha="normalButton">Click me</button>
+</div>
+```
+
+```js
+{ id: 'normalButton', onClick: function(e, el, app) {} }
+```
 
 ## `root`
 
@@ -145,30 +157,48 @@ reacting to scroll events. Here's an example event handler:
 }
 ```
 
-## Controlling event bubbling
+## Preventing event bubbling with `ignoreChildren`
 
 By default in the majority of browsers, events *bubble*. This means if an
 element has an event handler bound to it and a child of that element has an
 event triggered on it, the event handler bound to the parent will be called.
 
+```html
+<button data-ha="strictButton">
+  Click me!
+  <span class="icon"></span>
+</button>
+```
+
 As an example, imagine having a `button` in your HTML page that contains an
 icon inside a `span`. If the button has a click event handler bound to it and
-the icon gets clicked on, the button event handler will trigger, which is
-most likely desirable behaviour.
+the icon is clicked, the button event handler will trigger.
 
-HTMLApp doesn't change this default behaviour, but gives you the choice to
-opt-out of it by using a event handler property: `ignoreChildren`. This is like
-saying: "ignore events triggered by any child elements".
+HTMLApp gives you the choice to opt-out of having child events trigger a
+parent callback by using a event handler property: `ignoreChildren`. This is
+like saying: *"ignore events triggered by my children"*.
 
 Using it is very straightforward:
 
 ```js
 {
   id: 'strictButton',
-  ignoreChildren: true,
+  ignoreChildren: true, // child events won't trigger onClick
   onClick: function(e, el, app) {}
 }
 ```
 
 Now clicks made on `<button data-ha="strictButton">` *must* be made directly
 on the button itself, not its children.
+
+`ignoreChildren` can also be applied to root events, too:
+
+```js
+{
+  root: true,
+  ignoreChildren: true, // child events won't trigger onClick
+  onClick: function(e, el, app) {}
+}
+```
+
+Currently document events don't support it, however.
