@@ -1,4 +1,6 @@
 // See https://docusaurus.io/docs/site-config for all the possible site configuration options.
+const docs = require('./docs.json');
+const externalLinks = require('./externalLinks.json');
 
 const siteConfig = {
   title: 'HTMLApp',
@@ -9,9 +11,34 @@ const siteConfig = {
   organizationName: 'aaronleocooper',
 
   headerLinks: [
-    { doc: 'installation', label: 'Docs' },
-    { doc: 'api-overview', label: 'API Reference' },
+    docs.docs,
+    docs.apiRef,
     { page: 'about', label: 'About' }
+  ],
+
+  footerLinks: [
+    {
+      title: docs.docs.label,
+      links: [
+        docs.installation,
+        docs.gettingStarted
+      ]
+    },
+    {
+      title: docs.apiRef.label,
+      links: [
+        docs.apiHtmlApp,
+        docs.apiEventHandlers
+      ]
+    },
+    {
+      title: 'More',
+      links: [
+        externalLinks.github,
+        externalLinks.npm,
+        externalLinks.download
+      ]
+    },
   ],
 
   headerIcon: 'img/logo.svg',
@@ -57,10 +84,10 @@ const siteConfig = {
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
-  sourceRepoUrl: 'https://github.com/AaronLeoCooper/html-app',
-  npmUrl: 'https://www.npmjs.com/package/html-app',
-  websiteRepoUrl: 'https://github.com/AaronLeoCooper/html-app-docs',
-  cdnUrl: 'https://unpkg.com/html-app/dist/html-app.browser.min.js'
+  sourceRepoUrl: externalLinks.github.link,
+  npmUrl: externalLinks.npm.link,
+  websiteRepoUrl: externalLinks.docsGithub.link,
+  cdnUrl: externalLinks.download.link
 };
 
 module.exports = siteConfig;

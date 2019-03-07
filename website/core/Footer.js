@@ -6,7 +6,7 @@ class Footer extends React.Component {
     const docsUrl = this.props.config.docsUrl;
     const docsPart = `${docsUrl ? `${docsUrl}/` : ''}`;
     const langPart = `${language ? `${language}/` : ''}`;
-    return `${baseUrl}${docsPart}${langPart}${doc}`;
+    return `${baseUrl}${docsPart}${langPart}${doc}.html`;
   }
 
   pageUrl(doc, language) {
@@ -15,6 +15,10 @@ class Footer extends React.Component {
   }
 
   render() {
+    const { config: siteConfig } = this.props;
+
+    const { footerLinks } = siteConfig;
+
     return (
       <footer className="nav-footer" id="footer">
         <section className="sitemap">
@@ -28,36 +32,24 @@ class Footer extends React.Component {
               />
             )}
           </a>
-          <div>
-            <h5>Docs</h5>
-            <a href={this.docUrl('installation.html', this.props.language)}>
-              Installation
-            </a>
-            <a href={this.docUrl('getting-started.html', this.props.language)}>
-              Getting Started
-            </a>
-          </div>
-          <div>
-            <h5>API Reference</h5>
-            <a href={this.docUrl('api-overview.html', this.props.language)}>
-              Overview
-            </a>
-            <a href={this.docUrl('api-htmlapp.html', this.props.language)}>
-              HTMLApp
-            </a>
-          </div>
-          <div>
-            <h5>More</h5>
-            <a href={this.props.config.sourceRepoUrl}>
-              GitHub
-            </a>
-            <a href={this.props.config.npmUrl}>
-              NPM
-            </a>
-            <a href={this.props.config.cdnUrl}>
-              Download
-            </a>
-          </div>
+          {
+            footerLinks.map(({ title, links }) => (
+              <div key={title}>
+                <h5>{title}</h5>
+                {
+                  links.map(({ doc, link, label }) => (
+                    <a
+                      key={label}
+                      href={link || this.docUrl(doc, this.props.language)}
+                      target={link ? '_blank' : undefined}
+                    >
+                      {label}
+                    </a>
+                  ))
+                }
+              </div>
+            ))
+          }
         </section>
         <section className="copyright">
           {this.props.config.copyright}
