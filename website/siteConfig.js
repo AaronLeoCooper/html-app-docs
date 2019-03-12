@@ -28,7 +28,8 @@ const siteConfig = {
       title: docs.apiRef.label,
       links: [
         docs.apiHtmlApp,
-        docs.apiEventHandlers
+        docs.apiEventHandlers,
+        docs.apiElements
       ]
     },
     {

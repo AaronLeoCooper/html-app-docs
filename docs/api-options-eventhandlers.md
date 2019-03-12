@@ -53,7 +53,9 @@ object can have.
 *Params:*
 
 - `e` - the native event object
-- `el` - an enhanced version of the element with helper methods exposed
+- `el` - an enhanced version of the element with helper methods exposed, see
+  [Element Wrappers](./api-elements.md) for the full list of helper methods
+  available
 - `app` - the app instance object with helper methods exposed
 
 Any valid native element event can be bound to an event handler. to name a
@@ -66,12 +68,6 @@ as a camelcase name starting with "on". For example, to define a `click` event
 callback, it should be called: `onClick`, and a `keypress` event will be called
 `onKeyPress`.
 
-> Tip: if you're unsure how to name your particular event callback, just go
-> with whatever name seems logical to you.
-> The important rule to follow is that the letter *immediately* following
-> "on" must be capitalised, so `onKeyPress` will work just as well as
-> `onKeypress`.
-
 For brevity, several event callbacks can be added to a single event handler
 object, like so:
 
@@ -83,6 +79,9 @@ object, like so:
   onKeyUp: function(e, el, app) {}
 }
 ```
+
+> Tip: only the letter immediately following **"on"** needs to be capitalised, so
+> `onKeyPress` will work just as well as `onKeypress`.
 
 ## `id`
 
