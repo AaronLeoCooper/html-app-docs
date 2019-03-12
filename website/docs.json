@@ -4,5 +4,6 @@
   "gettingStarted": { "doc": "getting-started", "label": "Getting Started" },
   "apiRef": { "doc": "api-htmlapp", "label": "API Reference" },
   "apiHtmlApp": { "doc": "api-htmlapp", "label": "HTMLApp" },
-  "apiEventHandlers": { "doc": "api-options-eventhandlers", "label": "Event Handlers" }
+  "apiEventHandlers": { "doc": "api-options-eventhandlers", "label": "Event Handlers" },
+  "apiElements": { "doc": "api-elements", "label": "Element wrappers" }
 }

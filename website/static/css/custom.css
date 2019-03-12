@@ -9,12 +9,14 @@ code {
   font-family: $codeFont;
 }
 
-p a {
+p a,
+article li a {
   position: relative;
   font-weight: 500;
 }
 
-p a:before {
+p a:before,
+article li a:before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -26,7 +28,8 @@ p a:before {
   z-index: -1;
 }
 
-p a:hover:before {
+p a:hover:before,
+article li a:hover:before {
   opacity: 0.6;
 }
 
