@@ -15,6 +15,8 @@ Element wrappers are available in a few different places:
     event is attached to
   - Calling `app.getEl('elementName')` returns an element wrapper of
     the matched element
+  - Calling `app.getRootEl()` returns an element wrapper of the app
+    root element
 - In the `onLoadApp` callback:
   - The first argument is an array of all child element wrappers
     in the app
@@ -43,7 +45,7 @@ don't provide a specific feature, for example access to
 wrapper.el.querySelector('input');
 ```
 
-### `addClass`
+### `addClass(className: string)`
 
 Adds one or many classes to the HTML element.
 
@@ -54,7 +56,7 @@ arguments.
 wrapper.addClass('class1', 'class2');
 ```
 
-### `removeClass`
+### `removeClass(className: string)`
 
 Removes one or many classes from the HTML element.
 
@@ -65,7 +67,7 @@ arguments.
 wrapper.removeClass('class1', 'class2');
 ```
 
-### `setText`
+### `setText(text: string)`
 
 Safely sets the text content of the HTML element.
 
@@ -76,7 +78,7 @@ wrapper.setText('Hello!');
 Element text can also be cleared by passing an empty
 string.
 
-### `setInnerHtml`
+### `setInnerHtml(innerHtml: string)`
 
 Sets the `innerHTML` value of the HTML element to the
 passed string. This is one way of dynamically adding
@@ -94,7 +96,7 @@ wrapper.setInnerHtml('<p>HTML content</p>');
 However, libraries can also be used to sanitize content
 before passing it in, such as [DOMPurify](https://github.com/cure53/DOMPurify).
 
-### `setAttribute`
+### `setAttribute(attrName: string, attrValue: string)`
 
 Sets a single HTML element attribute based on the
 passed key and value.
@@ -103,7 +105,7 @@ passed key and value.
 wrapper.setAttribute('data-abc', '123');
 ```
 
-### `removeAttribute`
+### `removeAttribute(attrName: string)`
 
 Removes a single HTML element attribute based on the
 passed key.
@@ -112,7 +114,7 @@ passed key.
 wrapper.removeAttribute('data-abc');
 ```
 
-### `setStyle`
+### `setStyle(styleName: string, styleValue: string)`
 
 Sets a single inline style on the HTML element.
 
@@ -120,7 +122,7 @@ Sets a single inline style on the HTML element.
 wrapper.setStyle('color', 'red');
 ```
 
-### `getText`
+### `getText()`
 
 Returns the current text content of the HTML element.
 
@@ -128,7 +130,7 @@ Returns the current text content of the HTML element.
 var text = wrapper.getText();
 ```
 
-### `getInnerHtml`
+### `getInnerHtml()`
 
 Returns the innerHTML content of the HTML element.
 
@@ -136,7 +138,7 @@ Returns the innerHTML content of the HTML element.
 var html = wrapper.getInnerHtml();
 ```
 
-### `getClasses`
+### `getClasses()`
 
 Returns all classes on the HTML element as an array
 of string values.
@@ -145,7 +147,7 @@ of string values.
 var classes = wrapper.getClasses();
 ```
 
-### `getAttribute`
+### `getAttribute(attrName: string)`
 
 Returns a single attribute value on the HTML element,
 based on the passed attribute name.
@@ -154,7 +156,7 @@ based on the passed attribute name.
 var value = wrapper.getAttribute('data-abc');
 ```
 
-### `getAttributes`
+### `getAttributes()`
 
 Returns all attributes on the HTML element as an object
 of key value pairs.
@@ -164,7 +166,7 @@ var attributes = wrapper.getAttributes();
 // { id: 'email', class: 'input', 'data-ha': 'email' }
 ```
 
-### `getStyle`
+### `getStyle(styleName: string)`
 
 Returns a single inline style value on the HTML element,
 based on the passed style name.

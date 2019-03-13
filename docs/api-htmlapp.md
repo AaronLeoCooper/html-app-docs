@@ -32,11 +32,16 @@ which HTML element is treated as the root of the application.
 
 ```html
 <div data-htmlapp="main"></div>
+<div data-htmlapp="secondary"></div>
 ```
 
 ```js
 new HTMLApp({
   appName: 'main'
+});
+
+new HTMLApp({
+  appName: 'secondary'
 });
 ```
 
@@ -49,6 +54,10 @@ an element in your HTML:
 
 ```html
 <div data-htmlapp></div>
+```
+
+```js
+new HTMLApp();
 ```
 
 ### `eventHandlers`
@@ -72,4 +81,66 @@ some optional lifecycle methods that may be included
 in the passed options object.
 
 See the [Lifecycle Methods](./api-options-lifecycle.md) API reference for a full list. 
+
+## App Instance API
+
+When `HTMLApp` is initialised, it creates an app **instance**.
+This instance is accessible through one of the following ways:
+
+- In `eventHandlers` callbacks in the third argument
+- In the `onLoadApp` lifecycle method in the third argument
+- Returned from: `new HTMLApp`
+
+The app instance exposes some useful methods, as listed below.
+
+### `getEl(elementName: string)`
+
+A function that returns a single element wrapper of the passed
+child element name. The passed name must match an element's
+`data-ha` attribute value.
+
+If no element is found, `undefined` is returned instead.
+
+```js
+var app = new HTMLApp({
+  onLoadApp: function(rootEl, els, app) {
+    app.getEl('email').addClass('loaded');
+  },
+  eventHandlers: [
+    {
+      id: 'password',
+      onChange: function(e, el, app) {
+        app.getEl('email').addClass('password-updated');
+      }
+    }
+  ]
+});
+
+// Potentially returns undefined if window.load has not yet been called
+app.getEl('email');
+```
+
+### `getRootEl()`
+
+A function that returns an element wrapper of the app root
+element.
+
+```js
+var app = new HTMLApp({
+  onLoadApp: function(rootEl, els, app) {
+    app.getRootEl().addClass('loaded');
+  },
+  eventHandlers: [
+    {
+      id: 'password',
+      onChange: function(e, el, app) {
+        app.getRootEl().addClass('password-updated');
+      }
+    }
+  ]
+});
+
+// Potentially returns undefined if window.load has not yet been called
+app.getRootEl('email');
+```
 
