@@ -5,5 +5,6 @@
   "apiRef": { "doc": "api-htmlapp", "label": "API Reference" },
   "apiHtmlApp": { "doc": "api-htmlapp", "label": "HTMLApp" },
   "apiEventHandlers": { "doc": "api-options-eventhandlers", "label": "Event Handlers" },
-  "apiElements": { "doc": "api-elements", "label": "Element wrappers" }
+  "apiElements": { "doc": "api-elements", "label": "Element wrappers" },
+  "apiOptionsLifecycle": { "doc": "api-options-lifecycle", "label": "Lifecycle Methods" }
 }
