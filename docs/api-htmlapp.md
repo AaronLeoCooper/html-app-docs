@@ -10,7 +10,7 @@ globally accessible constructor function:
 
 ```js
 new HTMLApp();
-``` 
+```
 
 When using the installed library from NPM and importing it as an ES6 module,
 it is accessed as the default import:
@@ -64,3 +64,12 @@ root element.
   document
 
 See [Event Handlers](./api-options-eventhandlers.md) for the full API spec.
+
+### Lifecycle Methods
+
+When initialising a new HTMLApp instance, there are also
+some optional lifecycle methods that may be included
+in the passed options object.
+
+See the [Lifecycle Methods](./api-options-lifecycle.md) API reference for a full list. 
+

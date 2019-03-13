@@ -6,6 +6,7 @@
     ],
     "API Reference": [
       "api-htmlapp",
+      "api-options-lifecycle",
       "api-options-eventhandlers",
       "api-elements"
     ]
