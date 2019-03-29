@@ -116,7 +116,12 @@ ${title} provides an opinionated means of binding JavaScript logic with tagged H
             <div
               className="example-iframe"
               dangerouslySetInnerHTML={{
-                __html: '<iframe src="https://codesandbox.io/embed/j48o555oxv?autoresize=1&fontsize=14&hidenavigation=1&view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>'
+                __html: `
+<iframe height="549" style="width: 100%;" scrolling="no" title="HTMLApp Form Example" src="//codepen.io/AaronLeoCooper/embed/QPLWYy/?height=549&theme-id=0&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/AaronLeoCooper/pen/QPLWYy/'>HTMLApp Form Example</a> by Aaron Leo Cooper
+  (<a href='https://codepen.io/AaronLeoCooper'>@AaronLeoCooper</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+`
               }}
             />
           </Container>
